@@ -5,9 +5,6 @@ from utils.rest.services_utils import JSONObj
 
 
 class SlackServicesAPI(ServicesAPI):
-    """
-    helper functions to send something to slack via api
-    """
 
     def __init__(self, services_conn_info, slack_username: str):
         super().__init__(services_conn_info)
@@ -19,13 +16,7 @@ class SlackServicesAPI(ServicesAPI):
         return SlackServicesAPI(sci, slack_username)
 
        def gen_payload(self, message: str, slack_username: str = None, channel: str = None):
-        """
-        generated a payload for sending to slack
-        :param message:
-        :param slack_username: if specified overrides the slack_username set on the service for this message
-        :param channel: if specified overrides the default channel the slack_webhook_url of the service is associated with for this messag
-        :return:
-        """
+
         payload = JSONObj()
         payload.text = "message"
         return payload
